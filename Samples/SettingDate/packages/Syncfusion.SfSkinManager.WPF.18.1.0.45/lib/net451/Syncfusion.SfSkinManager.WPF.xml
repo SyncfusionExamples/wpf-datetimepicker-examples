@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.SfSkinManager.WPF</name>
+    </assembly>
+    <members>
+        <member name="M:Syncfusion.SfSkinManager.SkinHelper.GetDictonaries(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <param name="style"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.SfSkinManager.SkinHelper.GetDictionaries(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <param name="style"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.SfSkinManager.SkinHelper.GetStylesOfElement(System.Windows.DependencyObject)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.SfSkinManager.SkinHelper.SetStylesOnDialogWindow(System.Windows.Window,Syncfusion.SfSkinManager.VisualStyles)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="style"></param>
+        </member>
+        <member name="M:Syncfusion.SfSkinManager.SkinHelper.CopyStyle(System.Windows.DependencyObject,System.Windows.DependencyObject)">
+            <summary>
+            Copies style of one element to another.
+            </summary>
+            <param name="sourceElement">Source element whose style to be copied</param>
+            <param name="targetElement">Target element where style to be applied.</param>
+        </member>
+        <member name="M:Syncfusion.SfSkinManager.SfSkinManager.RegisterTheme(System.String,Syncfusion.SfSkinManager.SkinHelper)">
+            <summary>
+            Method to register SkinHelper details specific for each theme
+            </summary>
+            <param name="themeName"></param>
+            <param name="skinHelper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.SfSkinManager.SfSkinManager.GetVisualStyle(System.Windows.DependencyObject)">
+            <summary>
+            Gets the visual style applied to particular element.
+            </summary>
+            <param name="obj">UI element</param>
+            <returns>VisualStyles</returns>
+        </member>
+        <member name="M:Syncfusion.SfSkinManager.SfSkinManager.SetVisualStyle(System.Windows.DependencyObject,Syncfusion.SfSkinManager.VisualStyles)">
+            <summary>
+            Sets the visual style to the element and its children.
+            </summary>
+            <param name="obj"></param>
+            <param name="value"></param>
+        </member>
+        <member name="F:Syncfusion.SfSkinManager.SfSkinManager.VisualStyleProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Syncfusion.SfSkinManager.SfSkinManager.GetRootResourceDictionary(System.Windows.DependencyObject)">
+            <summary>
+            Gets the root ResourceDictionary where all the styles get merged.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.SfSkinManager.SfSkinManager.SetRootResourceDictionary(System.Windows.DependencyObject,System.Windows.ResourceDictionary)">
+            <summary>
+            Sets the root ResourceDictionary where all the styles get merged.
+            </summary>
+            <param name="obj"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Syncfusion.SfSkinManager.SfSkinManager.OnVisualStyleChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Applies the visual style to the control and its child element.
+            </summary>
+            <param name="obj">Dependency object</param>
+            <param name="e">DependencyPropertyChangedEventArgs contains the theme that has to be applied.</param>
+        </member>
+        <member name="M:Syncfusion.SfSkinManager.SfSkinManager.GetSkinInstance(System.String)">
+            <summary>
+            Method to create and return SkinHelper instance for specific visual style
+            </summary>
+            <param name="style">Contains VisualStyle</param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.SfSkinManager.SfSkinManager.ApplyWindowStyle(System.Windows.Window,System.String,System.Windows.ResourceDictionary)">
+            <summary>
+            Apply the theme to the Window, ChromelessWindow and RibbonWindow.
+            </summary>
+            <param name="window">Window type.</param>
+            <param name="style">Style that applies to the window.</param>
+            <param name="rootResourceDictionary">Resource dictionary that applies the style.</param>
+        </member>
+        <member name="M:Syncfusion.SfSkinManager.SfSkinManager.RemoveDictionaryIfExist(System.Windows.FrameworkElement,System.Windows.ResourceDictionary)">
+            <summary>
+            
+            </summary>
+            <param name="element"></param>
+            <param name="dictionary"></param>
+        </member>
+        <member name="M:Syncfusion.SfSkinManager.SfSkinManager.DictionaryExist(System.Windows.ResourceDictionary,System.Windows.ResourceDictionary)">
+            <summary>
+            
+            </summary>
+            <param name="element"></param>
+            <param name="dictionary"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.SfSkinManager.SfSkinManager.ApplyThemeForMSControl(System.Windows.FrameworkElement,System.String,System.Windows.ResourceDictionary)">
+            <summary>
+            Apply the theme for MSControl
+            </summary>
+            <param name="style"></param>
+        </member>
+        <member name="M:Syncfusion.SfSkinManager.SfSkinManager.ApplyThemeForAllControls(Syncfusion.SfSkinManager.VisualStyles,Syncfusion.SfSkinManager.VisualStyles)">
+            <summary>
+            Apply the theme for all controls.
+            </summary>
+            <param name="style">The current visual style.</param>
+            <param name="oldStyle">The old visual style.</param>
+        </member>
+        <member name="M:Syncfusion.SfSkinManager.SfSkinManager.RemoveDictionaryIfExist(System.Windows.ResourceDictionary,Syncfusion.SfSkinManager.VisualStyles,Syncfusion.SfSkinManager.VisualStyles)">
+            <summary>
+            Remove the existing theme <see cref="T:System.Windows.ResourceDictionary"/> files from the <see cref="!:Application.Current.Resources.MergedDictionaries"/> while switching to new theme.
+            </summary>
+            <param name="resourceDictionary">The new <see cref="T:System.Windows.ResourceDictionary"/> to add.</param>
+            <param name="currentStyle">The current style.</param>
+            <param name="oldStyle">The old style.</param>
+        </member>
+        <member name="M:Syncfusion.SfSkinManager.SfSkinManager.ApplyTheme(System.Windows.DependencyObject,System.String,Syncfusion.SfSkinManager.SkinHelper,System.Windows.ResourceDictionary)">
+            <summary>
+            
+            </summary>
+            <param name="item"></param>
+            <param name="style"></param>
+            <param name="styleInstance"></param>
+        </member>
+        <member name="M:Syncfusion.SfSkinManager.SfSkinManager.AddRootResourceDictionaty(System.Windows.ResourceDictionary,System.Windows.ResourceDictionary)">
+            <summary>
+            Adds the resource dictionary to the root element by comparing with the previous merged dictionaries.
+            </summary>
+            <param name="rootElement">Root element.</param>
+            <param name="rootResourceDictionary">Resource dictionary of the root element.</param>
+            <param name="newResourceDictionary">New resource dictionary that has to be added to the root element.</param>
+        </member>
+        <member name="M:Syncfusion.SfSkinManager.SfSkinManager.EnumLogicalChildrenOfType(System.Windows.DependencyObject,System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="rootelement"></param>
+            <param name="typeChild"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Syncfusion.SfSkinManager.SfSkinManager.FindAncestor(System.Windows.Media.Visual,System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="startingFrom"></param>
+            <param name="typeAncestor"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ClassReferenceAttribute">
+            <summary>
+            Represents a class for the Reference attributes
+            </summary>
+        </member>
+        <member name="P:ClassReferenceAttribute.IsReviewed">
+            <summary>
+            Returns a value when set
+            </summary>
+            <value>
+            <c>true</c> if instance is created ; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:ClassReferenceAttribute.ShouldInclude">
+            <summary>
+            Returns a value when set
+            </summary>
+            <value>
+            <c>true</c> if instance is created ; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Syncfusion.SfSkinManager.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.SfSkinManager.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.SfSkinManager.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>
