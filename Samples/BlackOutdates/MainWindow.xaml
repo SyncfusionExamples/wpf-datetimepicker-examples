@@ -1,0 +1,26 @@
+﻿<Window x:Class="BlackOutdates.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf" 
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:local="clr-namespace:BlackOutdates"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="DateTimeEdit - Blackoutdays" Height="500" Width="400">
+    <Window.DataContext>
+        <local:ViewModel></local:ViewModel>
+    </Window.DataContext>
+    <Grid>
+        <syncfusion:DateTimeEdit Name="dateTimeEdit"
+                                 Width="150" 
+                                 Height="30">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Loaded">
+                    <i:InvokeCommandAction Command="{Binding LoadedCommand}"
+                                           CommandParameter="{Binding ElementName=dateTimeEdit}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </syncfusion:DateTimeEdit>
+    </Grid>
+</Window>
