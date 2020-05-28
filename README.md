@@ -7,6 +7,8 @@ This repository contains the samples that demonstrate the functionalities of Dat
   <td><a href="Samples/SettingDate">How to set date in DateTimeEdit</a></td>
   <td><a href="Samples/DateTimeFormatting">Date and time formatting</a></td>
   <td><a href="Samples/Custom-clock-and-calendar">Customized calendar and clock</a></td>
+ </tr>
+ <tr>
   <td><a href="Samples/BlackOutdates">Block the dates</a></td>
   <td><a href="Samples/Localization">Localization</a></td>
  </tr>
