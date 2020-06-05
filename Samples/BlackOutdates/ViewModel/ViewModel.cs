@@ -25,7 +25,7 @@ namespace BlackOutdates
         {
             DateTimeEdit dateTimeEdit = obj as DateTimeEdit;
             //Setting start and end range for blocking dates
-            DateTime StartDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            DateTime StartDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month-1, 1);
             DateTime EndDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day - 1);
             Syncfusion.Windows.Controls.CalendarDateRange blackOutDays = new Syncfusion.Windows.Controls.CalendarDateRange()
             {

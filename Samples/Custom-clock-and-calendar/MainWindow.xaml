@@ -9,48 +9,76 @@
     xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
     Title="DateTimeEdit"
     Width="700"
-    Height="750"
+    Height="650"
     skin:SfSkinManager.VisualStyle="Office2016White"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
+    <Window.DataContext>
+        <local:ViewModel/>
+    </Window.DataContext>
     <Grid x:Name="grid">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.5*" />
-            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <syncfusion:DateTimeEdit
-            x:Name="dateTimeEdit"
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Custom Calender"
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center"
+                   Grid.Row="0"
+                   Grid.Column="0"/>
+
+        <syncfusion:DateTimeEdit 
+            DateTime="{Binding SelectedDate, Mode=TwoWay}" 
+            x:Name="dateTimeEdit"    
+            VerticalAlignment="Top"
             Width="250"
             Height="25"
-            Margin="0,-225,0,0">
+            Grid.Row="1"
+            Grid.Column="0">
+            <!--Custom DateTimeCalender-->
             <syncfusion:DateTimeEdit.DateTimeCalender>
                 <syncfusion:SfDateSelector
                     Width="250"
                     Height="430"
                     Foreground="#333333"
-                    SelectedDateTime="{Binding ElementName=dateTimeEdit, Path=DateTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    SelectedDateTime="{Binding SelectedDate, Mode=TwoWay}"
                     SelectorItemHeight="75"
                     SelectorItemSpacing="4.5"
                     SelectorItemWidth="75"
                     BorderThickness="0"
                     ShowCancelButton="False"
-                    ShowDoneButton="False" />
+                    ShowDoneButton="False"/>
             </syncfusion:DateTimeEdit.DateTimeCalender>
         </syncfusion:DateTimeEdit>
-        <syncfusion:DateTimeEdit
-            x:Name="dateTimeEdit1"
+
+        <TextBlock Text="Custom Clock" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center"
+                   Grid.Row="0"
+                   Grid.Column="1"/>
+
+        <syncfusion:DateTimeEdit 
+            DateTime="{Binding SelectedTime, Mode=TwoWay}"
+            x:Name="dateTimeEdit1" 
+            Pattern="ShortTime" 
+            VerticalAlignment="Top"
+            Grid.Row="1"
             Grid.Column="1"
             Width="250"
             Height="25"
-            Margin="0,-225,0,0"
-            DropDownView="Clock">
+            DropDownView="Clock">            
+            <!--Custom clock-->
             <syncfusion:DateTimeEdit.Clock>
                 <syncfusion:SfTimeSelector
                     Width="248"
                     Height="430"
-                    Margin="0,0,0,0"
                     Foreground="#333333"
-                    SelectedTime="{Binding ElementName=dateTimeEdit1, Path=DateTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    SelectedTime="{Binding SelectedTime,Mode=TwoWay}"
                     SelectorItemHeight="75"
                     SelectorItemSpacing="4.5"
                      BorderThickness="0"
