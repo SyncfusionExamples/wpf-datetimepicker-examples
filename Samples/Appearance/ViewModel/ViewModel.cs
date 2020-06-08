@@ -10,6 +10,7 @@ namespace Themes
         private Brush background = Brushes.Yellow;
         private Brush selectionBrush = Brushes.Orange;
         private Brush foreground = Brushes.Red;
+        private Brush focusedBorderBrush= Brushes.Red;
 
         public Brush Background
         {
@@ -18,6 +19,16 @@ namespace Themes
             {
                 background = value;
                 this.RaisePropertyChanged(nameof(Background));
+            }
+        } 
+        
+        public Brush FocusedBorderBrush
+        {
+            get { return focusedBorderBrush; }
+            set
+            {
+                focusedBorderBrush = value;
+                this.RaisePropertyChanged(nameof(FocusedBorderBrush));
             }
         }
 

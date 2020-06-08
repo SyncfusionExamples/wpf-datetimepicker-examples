@@ -1,0 +1,47 @@
+﻿<Window x:Class="Custom_FullDateSelector.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Custom_FullDateSelector" 
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" 
+        Title="DateTimeEdit - Custom DateTimeSelector" Height="600" Width="674">
+    <Window.DataContext>
+        <local:ViewModel/>
+    </Window.DataContext>
+    <Grid>
+            <syncfusion:DateTimeEdit DateTime="{Binding SelectedDate, Mode=TwoWay}" 
+                                     DropDownView="Classic" 
+                                     Pattern="FullDateTime"
+                                     Width="250" 
+                                     Height="25"
+                                     VerticalAlignment="Top"
+                                     HorizontalAlignment="Center"
+                                     Margin="50"
+                                     Name="dateTimeEdit">
+
+                <syncfusion:DateTimeEdit.DateTimeCalender>
+                    <!--Custom Calendar-->
+                    <syncfusion:SfDateSelector SelectorItemWidth="60" 
+                                               SelectorItemHeight="60" 
+                                               ShowCancelButton="False" 
+                                               ShowDoneButton="False" 
+                                               SelectedDateTime="{Binding SelectedDate, Mode=TwoWay}">
+                    </syncfusion:SfDateSelector>
+                </syncfusion:DateTimeEdit.DateTimeCalender>
+                
+                <syncfusion:DateTimeEdit.Clock>
+                    <!--Custom Clock-->
+                    <syncfusion:SfTimeSelector SelectorItemWidth="60"  
+                                               SelectorItemHeight="60"
+                                               ShowCancelButton="False"
+                                               ShowDoneButton="False" 
+                                            
+                                  SelectedTime="{Binding SelectedDate, Mode=TwoWay}">
+                    </syncfusion:SfTimeSelector>
+                </syncfusion:DateTimeEdit.Clock>
+            </syncfusion:DateTimeEdit>
+
+    </Grid>
+</Window>
