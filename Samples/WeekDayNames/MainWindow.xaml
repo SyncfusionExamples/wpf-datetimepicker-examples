@@ -1,0 +1,33 @@
+﻿<Window x:Class="WeekDayNames.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:syncfusion="http://schemas.syncfusion.com/wpf" 
+        xmlns:viewmodel="clr-namespace:WeekDayNames.ViewModel"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="DateTimeEdit - WeekDay names" Height="600" Width="600">
+    <Window.Resources>
+        <viewmodel:ViewModel x:Key="viewModel1">
+            <viewmodel:ViewModel.NewWeekDayNames>
+                <x:Array Type="sys:String" 
+                 xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                    <sys:String>Sun</sys:String>
+                    <sys:String>Mon</sys:String>
+                    <sys:String>Tue</sys:String>
+                    <sys:String>Wed</sys:String>
+                    <sys:String>Thu</sys:String>
+                    <sys:String>Fri</sys:String>
+                    <sys:String>Sat</sys:String>
+                </x:Array>
+            </viewmodel:ViewModel.NewWeekDayNames>
+        </viewmodel:ViewModel>
+    </Window.Resources>
+    <Grid>
+        <syncfusion:DateTimeEdit ShortestDayNames="{Binding NewWeekDayNames}" 
+                                 DataContext="{StaticResource ResourceKey=viewModel1}" 
+                                 Width="150"
+                                 Height="25"
+                                 Name="dateTimeEdit" />
+    </Grid>
+</Window>

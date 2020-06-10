@@ -12,7 +12,7 @@
     </Window.DataContext>
     <Grid>
             <syncfusion:DateTimeEdit DateTime="{Binding SelectedDate, Mode=TwoWay}" 
-                                     DropDownView="Classic" 
+                                     DropDownView="Combined" 
                                      Pattern="FullDateTime"
                                      Width="250" 
                                      Height="25"
