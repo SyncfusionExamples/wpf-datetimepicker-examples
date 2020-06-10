@@ -6,7 +6,7 @@
         xmlns:syncfusion="http://schemas.syncfusion.com/wpf" 
         xmlns:local="clr-namespace:Themes"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
-        Title="DateTimeEdit - Appearance" Height="450" Width="700">
+        Title="DateTimeEdit - Appearance" Height="600" Width="700">
 
     <Window.DataContext>
         <local:ViewModel/>
