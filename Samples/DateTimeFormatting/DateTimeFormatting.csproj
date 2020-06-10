@@ -84,8 +84,8 @@
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml" />
-    <Compile Include="PatternConverter.cs" />
-    <Compile Include="StringToCultureConverter.cs" />
+    <Compile Include="Converters\PatternConverter.cs" />
+    <Compile Include="Converters\StringToCultureConverter.cs" />
     <Compile Include="ViewModel\ViewModel.cs" />
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>

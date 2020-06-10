@@ -156,6 +156,8 @@
                         <ComboBoxItem Tag="5" Content="is-IS"/>
                         <ComboBoxItem Tag="6" Content="ar-SA"/>
                         <ComboBoxItem Tag="7" Content="he-IL"/>
+                        <ComboBoxItem Tag="8" Content="bs-Latn"/>
+                        <ComboBoxItem Tag="9" Content="fr-FR"/>
                     </ComboBox>
                 </Grid>
             </GroupBox>
