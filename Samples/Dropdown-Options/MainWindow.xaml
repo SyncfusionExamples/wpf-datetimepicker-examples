@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:Dropdown_Options"
         xmlns:global="clr-namespace:System.Globalization;assembly=mscorlib"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
-        Title="DateTimeEdit - DropDown options" Height="600" Width="800">
+        Title="DateTimeEdit - Selecting datetime options" Height="700" Width="800">
     <Window.DataContext>
         <local:ViewModel/>
     </Window.DataContext>
@@ -25,12 +25,16 @@
         <Border Grid.Column="0">
             <Grid>
                 <syncfusion:DateTimeEdit CanEdit="{Binding CanEdit}"
+                                         IsReadOnly="{Binding IsReadOnly}"
+                                         MinDateTime="{Binding MinDateTime}"
+                                         MaxDateTime="{Binding MaxDateTime}" 
                                          DropDownView="{Binding DropDownView}" 
                                          EnableDeleteKey="{Binding EnableDeleteKey}" 
                                          OnFocusBehavior="{Binding OnFocusBehavior}" 
                                          TodayButtonAction="{Binding TodayButtonAction}" 
                                          EnableBackspaceKey="{Binding EnableBackspaceKey}"
                                          IsEmptyDateEnabled="{Binding IsEmptyDateEnabled}" 
+                                         DisableDateSelection="{Binding DisableDateSelection}"
                                          IsButtonPopUpEnabled="{Binding IsButtonPopUpEnabled}" 
                                          EnableMouseWheelEdit="{Binding EnableMouseWheelEdit}"
                                          IsVisibleRepeatButton="{Binding IsVisibleRepeatButton}"
@@ -56,7 +60,7 @@
                     <!--Popup DateTime Selector-->                    
                     <GroupBox Margin="10" 
                               Grid.Column="1" 
-                              Height="200"
+                              Height="150"
                               HeaderTemplate="{StaticResource GroupBox_Header}"
                               Header="Popup DateTime Selector">
                         <Grid HorizontalAlignment="Stretch" 
@@ -124,7 +128,7 @@
                     <!--Datetime Editing Options"-->
                     <GroupBox Margin="10" 
                               Grid.Column="1" 
-                              Height="300"
+                              Height="250"
                               HeaderTemplate="{StaticResource GroupBox_Header}"
                               Header="Datetime Editing Options">
                         <Grid HorizontalAlignment="Stretch" 
@@ -231,6 +235,64 @@
                                                     Grid.Row="8" 
                                                     Grid.Column="1" 
                                                     Margin="3"/>
+                        </Grid>
+                    </GroupBox>
+
+                    <!--Restrict the DateTime selection-->
+                    <GroupBox Margin="10" 
+                              Grid.Column="1" 
+                              Height="150"
+                              HeaderTemplate="{StaticResource GroupBox_Header}"
+                              Header="Restrict the DateTime selection">
+                        <Grid HorizontalAlignment="Stretch" 
+                              VerticalAlignment="Stretch"
+                              Margin="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Margin="3"
+                                       Text ="Set Minimum Date" 
+                                       Grid.Row="0"
+                                       Grid.Column="0"/>
+                            <syncfusion:DateTimeEdit DateTime="{Binding MinDateTime, Mode=TwoWay}" 
+                                                     Grid.Row="0" 
+                                                     Grid.Column="1"  
+                                                     Margin="3"/>
+
+                            <TextBlock Margin="3"
+                                       Text ="Set Maximum Date"
+                                       Grid.Row="1"
+                                       Grid.Column="0"/>
+                            <syncfusion:DateTimeEdit DateTime="{Binding MaxDateTime, Mode=TwoWay}" 
+                                                     Grid.Row="1" 
+                                                     Grid.Column="1"  
+                                                     Margin="3"/>
+                            
+                            <TextBlock Margin="3"
+                                       Text ="Restrict date selection"
+                                       Grid.Row="2"
+                                       Grid.Column="0"/>
+                            <CheckBox IsChecked="{Binding DisableDateSelection,Mode=TwoWay}"
+                                      Grid.Row="2" 
+                                      Grid.Column="1" 
+                                      Margin="3"/>
+
+                            <TextBlock Margin="3"
+                                       Text ="Readonly"
+                                       Grid.Row="3"
+                                       Grid.Column="0"/>
+                            <CheckBox IsChecked="{Binding IsReadOnly,Mode=TwoWay}"
+                                      Grid.Row="3" 
+                                      Grid.Column="1" 
+                                      Margin="3"/>
                         </Grid>
                     </GroupBox>
                 </StackPanel>

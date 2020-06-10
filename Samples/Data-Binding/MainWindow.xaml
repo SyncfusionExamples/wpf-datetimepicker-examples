@@ -1,0 +1,27 @@
+﻿<Window x:Class="Data_Binding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf" 
+        xmlns:local="clr-namespace:Data_Binding"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="DateTimeEdit - DataBinding" Height="650" Width="600">
+    <Window.DataContext>
+        <local:ViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <StackPanel Orientation="Horizontal" >
+            <syncfusion:DateTimeEdit DateTime="{Binding SelectedDateTime,Mode=TwoWay}" 
+                                     Name="dateTimeEdit1" 
+                                     Width="150" 
+                                     Height="25" 
+                                     Margin="100"/>
+
+            <syncfusion:DateTimeEdit DateTime="{Binding SelectedDateTime,Mode=TwoWay}" 
+                                     Name="dateTimeEdit2" 
+                                     Width="150" 
+                                     Height="25"/>
+        </StackPanel>
+    </Grid>
+</Window>

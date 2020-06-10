@@ -1,5 +1,6 @@
 ﻿
 using Syncfusion.Windows.Shared;
+using System;
 using System.Windows.Media;
 
 namespace Dropdown_Options
@@ -19,6 +20,10 @@ namespace Dropdown_Options
         private bool enableBackspaceKey= true;
         private OnFocusBehavior onFocusBehavior= OnFocusBehavior.CursorAtEnd;
         private Brush repeatButtonBackground= Brushes.Red;
+        private DateTime minDateTime = new DateTime(2020, 06, 01);
+        private DateTime maxDateTime= new DateTime(2020, 06, 15);
+        private bool disableDateSelection;
+        private bool isReadOnly;
 
         #region Popup DateTime Selector
         public DropDownViews DropDownView
@@ -187,6 +192,61 @@ namespace Dropdown_Options
             }
         }
 
+        #endregion
+
+
+        #region Restrict the DateTime selection
+
+        public DateTime MinDateTime
+        {
+            get
+            {
+                return minDateTime;
+            }
+            set
+            {
+                minDateTime = value;
+                this.RaisePropertyChanged(nameof(MinDateTime));
+            }
+        }
+        public DateTime MaxDateTime
+        {
+            get
+            {
+                return maxDateTime;
+            }
+            set
+            {
+                maxDateTime = value;
+                this.RaisePropertyChanged(nameof(MaxDateTime));
+            }
+        }
+
+        public bool DisableDateSelection
+        {
+            get
+            {
+                return disableDateSelection;
+            }
+            set
+            {
+                disableDateSelection = value;
+                this.RaisePropertyChanged(nameof(DisableDateSelection));
+            }
+        }
+        
+        public bool IsReadOnly
+        {
+            get
+            {
+                return isReadOnly;
+            }
+            set
+            {
+                isReadOnly = value;
+                this.RaisePropertyChanged(nameof(IsReadOnly));
+            }
+        }
         #endregion
     }
 }
