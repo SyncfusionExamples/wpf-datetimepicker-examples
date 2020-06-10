@@ -5,11 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:syncfusion="http://schemas.syncfusion.com/wpf" 
         xmlns:local="clr-namespace:Dropdown_Options"
+        xmlns:global="clr-namespace:System.Globalization;assembly=mscorlib"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
         Title="DateTimeEdit - DropDown options" Height="600" Width="800">
     <Window.DataContext>
         <local:ViewModel/>
     </Window.DataContext>
+    <Window.Resources>
+        <DataTemplate x:Key="GroupBox_Header" DataType="DataTemplate">
+            <TextBlock FontWeight="Bold" Text="{Binding}"></TextBlock>
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -18,81 +24,216 @@
 
         <Border Grid.Column="0">
             <Grid>
-                <syncfusion:DateTimeEdit DropDownView="{Binding DropDownView}" 
+                <syncfusion:DateTimeEdit CanEdit="{Binding CanEdit}"
+                                         DropDownView="{Binding DropDownView}" 
+                                         EnableDeleteKey="{Binding EnableDeleteKey}" 
+                                         OnFocusBehavior="{Binding OnFocusBehavior}" 
                                          TodayButtonAction="{Binding TodayButtonAction}" 
+                                         EnableBackspaceKey="{Binding EnableBackspaceKey}"
                                          IsEmptyDateEnabled="{Binding IsEmptyDateEnabled}" 
                                          IsButtonPopUpEnabled="{Binding IsButtonPopUpEnabled}" 
-                                         FlowDirection="{Binding FlowDirection}"
-                                         Pattern="FullDateTime"
+                                         EnableMouseWheelEdit="{Binding EnableMouseWheelEdit}"
+                                         IsVisibleRepeatButton="{Binding IsVisibleRepeatButton}"
+                                         IsEnabledRepeatButton="{Binding IsEnabledRepeatButton}"                                          
+                                         RepeatButtonBackground="{Binding RepeatButtonBackground}" 
+                                         EnableAlphaKeyNavigation="{Binding EnableAlphaKeyNavigation}"
                                          Name="dateTimeEdit"
-                                         Margin="20" Height="25" />
-
+                                         Margin="20" Height="25" >
+                    <syncfusion:DateTimeEdit.DateTimeFormat>
+                        <global:DateTimeFormatInfo ShortDatePattern="MM/dd/yy hh:mm:ss"/>
+                    </syncfusion:DateTimeEdit.DateTimeFormat>
+                </syncfusion:DateTimeEdit>
             </Grid>
         </Border>
 
-        <GroupBox Margin="0,0,3,3" 
+        <GroupBox Margin="10" 
                   Grid.Column="1" 
-                  Header="DropDown Options">
-            <Grid HorizontalAlignment="Stretch" 
-                  VerticalAlignment="Stretch"
-                  Margin="5">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
+                  HeaderTemplate="{StaticResource GroupBox_Header}"
+                  Header="User Options">
+            <Grid>
+                <StackPanel>
+                    
+                    <!--Popup DateTime Selector-->                    
+                    <GroupBox Margin="10" 
+                              Grid.Column="1" 
+                              Height="200"
+                              HeaderTemplate="{StaticResource GroupBox_Header}"
+                              Header="Popup DateTime Selector">
+                        <Grid HorizontalAlignment="Stretch" 
+                              VerticalAlignment="Stretch"
+                              Margin="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
 
-                <TextBlock Margin="3"
-                           Text ="DropDown View" 
-                           Grid.Row="0"
-                           Grid.Column="0"/>
-                <ComboBox SelectedItem="{Binding DropDownView, Mode=TwoWay}" 
-                          Grid.Row="0" 
-                          Grid.Column="1"  
-                          Margin="3">
-                    <syncfusion:DropDownViews>Calendar</syncfusion:DropDownViews>
-                    <syncfusion:DropDownViews>Classic</syncfusion:DropDownViews>
-                    <syncfusion:DropDownViews>Clock</syncfusion:DropDownViews>
-                    <syncfusion:DropDownViews>Combined</syncfusion:DropDownViews>
-                </ComboBox>
-                
+                            <TextBlock Margin="3"
+                                       Text ="DropDown View" 
+                                       Grid.Row="0"
+                                       Grid.Column="0"/>
+                            <ComboBox SelectedItem="{Binding DropDownView, Mode=TwoWay}" 
+                                      Grid.Row="0" 
+                                      Grid.Column="1"  
+                                      Margin="3">
+                                <syncfusion:DropDownViews>Calendar</syncfusion:DropDownViews>
+                                <syncfusion:DropDownViews>Classic</syncfusion:DropDownViews>
+                                <syncfusion:DropDownViews>Clock</syncfusion:DropDownViews>
+                                <syncfusion:DropDownViews>Combined</syncfusion:DropDownViews>
+                            </ComboBox>
 
-                <TextBlock Margin="3"
-                           Text ="TodayButton Action"
-                           Grid.Row="1"
-                           Grid.Column="0"/>
-                <ComboBox SelectedItem="{Binding TodayButtonAction, Mode=TwoWay}" 
-                          Grid.Row="1" 
-                          Grid.Column="1"  
-                          Margin="3">
-                    <syncfusion:TodayButtonAction>Date</syncfusion:TodayButtonAction>
-                    <syncfusion:TodayButtonAction>DateTime</syncfusion:TodayButtonAction>
-                </ComboBox>
 
-                <TextBlock Margin="3"
-                           Text ="Show DropDown button"
-                           Grid.Row="2"
-                           Grid.Column="0"/>
-                <CheckBox IsChecked="{Binding IsButtonPopUpEnabled,Mode=TwoWay}"
-                          Grid.Row="2" 
-                          Grid.Column="1" 
-                          Margin="3"/>
+                            <TextBlock Margin="3"
+                                       Text ="TodayButton Action"
+                                       Grid.Row="1"
+                                       Grid.Column="0"/>
+                            <ComboBox SelectedItem="{Binding TodayButtonAction, Mode=TwoWay}" 
+                                      Grid.Row="1" 
+                                      Grid.Column="1"  
+                                      Margin="3">
+                                <syncfusion:TodayButtonAction>Date</syncfusion:TodayButtonAction>
+                                <syncfusion:TodayButtonAction>DateTime</syncfusion:TodayButtonAction>
+                            </ComboBox>
 
-                <TextBlock Margin="3"
-                           Text ="Show None button to reset"
-                           Grid.Row="3"
-                           Grid.Column="0"/>
-                <CheckBox IsChecked="{Binding IsEmptyDateEnabled,Mode=TwoWay}"
-                          IsEnabled="{Binding IsButtonPopUpEnabled}"
-                          Grid.Row="3" 
-                          Grid.Column="1" 
-                          Margin="3"/>
+                            <TextBlock Margin="3"
+                                       Text ="Show DropDown button"
+                                       Grid.Row="2"
+                                       Grid.Column="0"/>
+                            <CheckBox IsChecked="{Binding IsButtonPopUpEnabled,Mode=TwoWay}"
+                                      Grid.Row="2" 
+                                      Grid.Column="1" 
+                                      Margin="3"/>
+
+                            <TextBlock Margin="3"
+                                       Text ="Show None button to reset"
+                                       Grid.Row="3"
+                                       Grid.Column="0"/>
+                            <CheckBox IsChecked="{Binding IsEmptyDateEnabled,Mode=TwoWay}"
+                                      IsEnabled="{Binding IsButtonPopUpEnabled}"
+                                      Grid.Row="3" 
+                                      Grid.Column="1" 
+                                      Margin="3"/>
+                        </Grid>
+                    </GroupBox>
+
+                    <!--Datetime Editing Options"-->
+                    <GroupBox Margin="10" 
+                              Grid.Column="1" 
+                              Height="300"
+                              HeaderTemplate="{StaticResource GroupBox_Header}"
+                              Header="Datetime Editing Options">
+                        <Grid HorizontalAlignment="Stretch" 
+                              VerticalAlignment="Stretch"
+                              Margin="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Margin="3"
+                                       Text ="Free Flow Editing" 
+                                       Grid.Row="0"
+                                       Grid.Column="0"/>
+                            <CheckBox IsChecked="{Binding CanEdit, Mode=TwoWay}" 
+                                      Grid.Row="0" 
+                                      Grid.Column="1"  
+                                      Margin="3"/>
+
+                            <TextBlock Margin="3"
+                                       Text ="Edit value on MouseWheel"
+                                       Grid.Row="1"
+                                       Grid.Column="0"/>
+                            <CheckBox IsChecked="{Binding EnableMouseWheelEdit, Mode=TwoWay}" 
+                                      Grid.Row="1" 
+                                      Grid.Column="1"  
+                                      Margin="3"/>
+
+                            <TextBlock Margin="3"
+                                       Text ="Show UpDown Button"
+                                       Grid.Row="2"
+                                       Grid.Column="0"/>
+                            <CheckBox IsChecked="{Binding IsVisibleRepeatButton,Mode=TwoWay}"
+                                      Grid.Row="2" 
+                                      Grid.Column="1" 
+                                      Margin="3"/>
+
+                            <TextBlock Margin="3"
+                                       Text ="Enable UpDown Button"
+                                       Grid.Row="3"
+                                       Grid.Column="0"/>
+                            <CheckBox IsChecked="{Binding IsEnabledRepeatButton,Mode=TwoWay}"
+                                      Grid.Row="3" 
+                                      Grid.Column="1" 
+                                      Margin="3"/>
+                            
+                            <TextBlock Margin="3"
+                                       Text ="Change Month on KeyPress"
+                                       Grid.Row="4"
+                                       Grid.Column="0"/>
+                            <CheckBox IsChecked="{Binding EnableAlphaKeyNavigation,Mode=TwoWay}"
+                                      Grid.Row="4" 
+                                      Grid.Column="1" 
+                                      Margin="3"/>
+
+                            <TextBlock Margin="3"
+                                       Text ="Enable Delete key"
+                                       Grid.Row="5"
+                                       Grid.Column="0"/>
+                            <CheckBox IsChecked="{Binding EnableDeleteKey,Mode=TwoWay}"
+                                      Grid.Row="5" 
+                                      Grid.Column="1" 
+                                      Margin="3"/>
+                            
+                            <TextBlock Margin="3"
+                                       Text ="Enable BackSpace key"
+                                       Grid.Row="6"
+                                       Grid.Column="0"/>
+                            <CheckBox IsChecked="{Binding EnableBackspaceKey,Mode=TwoWay}"
+                                      Grid.Row="6" 
+                                      Grid.Column="1" 
+                                      Margin="3"/> 
+                            
+                            <TextBlock Margin="3"
+                                       Text ="OnFocus Behavior" 
+                                       Grid.Row="7"
+                                       Grid.Column="0"/>
+                            <ComboBox SelectedItem="{Binding OnFocusBehavior, Mode=TwoWay}" 
+                                      Grid.Row="7" 
+                                      Grid.Column="1"  
+                                      Margin="3">
+                                <syncfusion:OnFocusBehavior>CursorOnFirstCharacter</syncfusion:OnFocusBehavior>
+                                <syncfusion:OnFocusBehavior>CursorAtEnd</syncfusion:OnFocusBehavior>
+                                <syncfusion:OnFocusBehavior>Default</syncfusion:OnFocusBehavior>
+                            </ComboBox>
+                            
+                            <TextBlock Margin="3"
+                                       Text ="OnFocus Behavior" 
+                                       Grid.Row="8"
+                                       Grid.Column="0"/>
+                            <syncfusion:ColorPicker Brush="{Binding RepeatButtonBackground,Mode=TwoWay}"
+                                                    IsEnabled="{Binding IsVisibleRepeatButton}"
+                                                    Grid.Row="8" 
+                                                    Grid.Column="1" 
+                                                    Margin="3"/>
+                        </Grid>
+                    </GroupBox>
+                </StackPanel>
             </Grid>
         </GroupBox>
     </Grid>
