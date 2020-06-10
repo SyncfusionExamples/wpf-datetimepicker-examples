@@ -12,6 +12,10 @@
         Title="DateTimeEdit" Height="450" Width="600">
     <Grid x:Name="grid">
         <!--Setting date -->
-        <syncfusion:DateTimeEdit x:Name="dateTimeEdit" Height="25" Width="200" Margin="0, -100, 0, 0" DateTime="07/05/2010" Pattern="LongDate"/>
+        <syncfusion:DateTimeEdit x:Name="dateTimeEdit"
+                                 Height="25" 
+                                 Width="200"
+                                 DateTime="07/05/2010"
+                                 Pattern="LongDate"/>
     </Grid>
 </Window>
