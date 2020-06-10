@@ -12,6 +12,14 @@ This repository contains the samples that demonstrate the functionalities of Dat
  </tr>
  <tr>
   <td><a href="Samples/Custom-FullDateSelector">Customized calendar and clock selector</a></td>
+  <td><a href="Samples/Custom-DropDownButton">Custom DropDownButton</a></td>
+  <td><a href="Samples/Dropdown-Options">Dropdown Options</a></td>
+  <td><a href="Samples/MonthNames">Change dropdown Month Names</a></td>
+  <td><a href="Samples/WeekDayNames">Change dropdown Weekday Names</a></td>
+ </tr>
+ 
+ 
+ <tr>
   <td><a href="Samples/BlackOutdates">Block the dates</a></td>
   <td><a href="Samples/Appearance">Appearance</a></td>
   <td><a href="Samples/Themes">Themes</a></td>
