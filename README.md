@@ -11,8 +11,15 @@ This repository contains the samples that demonstrate the functionalities of Dat
   <td><a href="Samples/Custom-clock-and-calendar">Customized Clock</a></td>  
  </tr>
  <tr>
+  <td><a href="Samples/Data-Binding">Binding DateTime/a></td>
   <td><a href="Samples/Custom-FullDateSelector">Customized calendar and clock selector</a></td>
-  <td><a href="Samples/Custom-DropDownButton">Custom DropDownButton</a></td>
+  <td><a href="Samples/Custom-DropDownButton">Custom UI for DropDownButton</a></td>
+  <td><a href="Samples/Dropdown-Options">Restrict min max date</a></td> 
+ </tr>
+ 
+ <tr>
+  <td><a href="Samples/NullValue-Options">Custom UI for UpDown button</a></td>
+  <td><a href="Samples/NullValue-Options">Watermark support</a></td>
   <td><a href="Samples/Dropdown-Options">Dropdown Options</a></td>
   <td><a href="Samples/MonthNames">Change dropdown Month Names</a></td>
   <td><a href="Samples/WeekDayNames">Change dropdown Weekday Names</a></td>
