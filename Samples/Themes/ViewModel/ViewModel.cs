@@ -69,6 +69,8 @@ namespace Appearance
             Themes.Add("Office2016Colorful");
             Themes.Add("Office2016DarkGray");
             Themes.Add("Office2016White");
+            Themes.Add("Office2019Black");
+            Themes.Add("Office2019Colorful");
             Themes.Add("Office365");
             Themes.Add("Saffron");
             Themes.Add("VisualStudio2013");
