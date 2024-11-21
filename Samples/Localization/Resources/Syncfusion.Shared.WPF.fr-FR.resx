@@ -118,18 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AccessCalendarText" xml:space="preserve">
-    <value>calendrier</value>
+    <value>Calendrier</value>
   </data>
   <data name="AccessClockText" xml:space="preserve">
-    <value>L'horloge</value>
+    <value>Horloge</value>
   </data>
   <data name="AccessEmptyDateText" xml:space="preserve">
-    <value>aucun</value>
+    <value>Effacer</value>
   </data>
   <data name="AccessWatchText" xml:space="preserve">
-    <value>regarder</value>
+    <value>Montre</value>
   </data>
   <data name="TodayLabel" xml:space="preserve">
-    <value>aujourd'hui</value>
+    <value>Aujourd'hui</value>
   </data>
 </root>
